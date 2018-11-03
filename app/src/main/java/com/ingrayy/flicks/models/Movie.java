@@ -1,0 +1,34 @@
+package com.ingrayy.flicks.models;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+/**
+ * Create by ingrayy on 31/10/18.
+ */
+public class Movie{
+    // values from API
+    private String title;
+    private String overview;
+    private String posterPath; // only the path
+
+
+    // initialize from JSON data
+    public Movie(JSONObject object) throws JSONException {
+         title = object.getString("title");
+         overview = object.getString("overview");
+         posterPath = object.getString("poster_path");
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getOverview() {
+        return overview;
+    }
+
+    public String getPosterPath() {
+        return posterPath;
+    }
+}
